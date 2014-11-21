@@ -9,7 +9,7 @@
 
 #include "dhcp_server.h"
 #include "dhcp_log.h"
-
+/*karan*/
 struct server_config gobal_config = {0};
 
 struct dhcp_packet_handler gobal_packet_handler = 
