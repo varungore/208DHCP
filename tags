@@ -1,0 +1,357 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AREA_SZ	dhcp.c	115;"	d	file:
+BOOTP_ABSOLUTE_MIN_LEN	dhcp_packet.h	122;"	d
+BOOTP_REPLAY_PORT	dhcp_server.h	9;"	d
+BOOTREPLY	dhcp.c	203;"	d	file:
+BOOTREQUEST	dhcp.c	202;"	d	file:
+BOOT_REPLY	dhcp_packet.h	5;"	d
+BOOT_REQUEST	dhcp_packet.h	4;"	d
+BROADCAST_ADDRESS	dhcp_server.h	11;"	d
+CONDIF_LOG_ENABLED	dhcp_log.h	16;"	d
+CONFIG_BUFFER_SIZE	dhcp_log.h	20;"	d
+CONFIG_IP_ALLOCATOR_FILE	dhcp_server.h	17;"	d
+CONFIG_LEASE_TIME	dhcp_server.h	15;"	d
+CONFIG_LISTEN_PORT	dhcp_server.h	14;"	d
+CONFIG_LOG_FILE_DIR	dhcp_log.h	18;"	d
+CONFIG_LOG_LEVEL	dhcp_log.h	17;"	d
+CONFIG_RENEW_TIME	dhcp_server.h	16;"	d
+CONFIG_SERVER_ADDRESS	dhcp_server.h	13;"	d
+COPYRIGHT	dhcp.c	/^const char *COPYRIGHT= "\\$/;"	v
+DEBUG	dhcp_log.h	40;"	d
+DHCPACK	dhcp.c	209;"	d	file:
+DHCPDECLINE	dhcp.c	208;"	d	file:
+DHCPDISCOVER	dhcp.c	205;"	d	file:
+DHCPNACK	dhcp.c	210;"	d	file:
+DHCPOFFER	dhcp.c	206;"	d	file:
+DHCPRELEASE	dhcp.c	211;"	d	file:
+DHCPREQUEST	dhcp.c	207;"	d	file:
+DHCP_ACK	dhcp_packet.h	18;"	d
+DHCP_BROADCAST_FLAG	dhcp.c	223;"	d	file:
+DHCP_CLIENT_PORT	dhcp.c	226;"	d	file:
+DHCP_DECLINE	dhcp_packet.h	17;"	d
+DHCP_DISCOVER	dhcp_packet.h	14;"	d
+DHCP_FORCE_RENEW	dhcp_packet.h	22;"	d
+DHCP_INFINITE_TIME	dhcp.c	221;"	d	file:
+DHCP_INFORM	dhcp_packet.h	21;"	d
+DHCP_LEASE_ACTIVE	dhcp_packet.h	26;"	d
+DHCP_LEASE_QUERY	dhcp_packet.h	23;"	d
+DHCP_LEASE_UNASSIGNED	dhcp_packet.h	24;"	d
+DHCP_LEASE_UNKNOWN	dhcp_packet.h	25;"	d
+DHCP_MAGIC_COOKIE	dhcp_packet.c	/^char DHCP_MAGIC_COOKIE[4] = {0x63, 0x82, 0x53, 0x63};$/;"	v
+DHCP_MAX_MTU	dhcp_packet.h	124;"	d
+DHCP_NAK	dhcp_packet.h	19;"	d
+DHCP_OFFER	dhcp_packet.h	15;"	d
+DHCP_OPTION_BROADCAST_ADDRESS	dhcp.c	215;"	d	file:
+DHCP_OPTION_HOST_NAME	dhcp.c	214;"	d	file:
+DHCP_OPTION_LEASE_TIME	dhcp.c	217;"	d	file:
+DHCP_OPTION_MESSAGE_TYPE	dhcp.c	213;"	d	file:
+DHCP_OPTION_REBINDING_TIME	dhcp.c	219;"	d	file:
+DHCP_OPTION_RENEWAL_TIME	dhcp.c	218;"	d	file:
+DHCP_OPTION_REQUESTED_ADDRESS	dhcp.c	216;"	d	file:
+DHCP_RELEASE	dhcp_packet.h	20;"	d
+DHCP_REQUEST	dhcp_packet.h	16;"	d
+DHCP_SERVER_PORT	dhcp.c	225;"	d	file:
+DHCP_VEND_SIZE	dhcp_packet.h	123;"	d
+DHO_ALL_SUBNETS_LOCAL	dhcp_packet.h	56;"	d
+DHO_ARP_CACHE_TIMEOUT	dhcp_packet.h	64;"	d
+DHO_ASSOCIATED_IP	dhcp_packet.h	112;"	d
+DHO_AUTO_CONFIGURE	dhcp_packet.h	114;"	d
+DHO_BOOTFILE	dhcp_packet.h	95;"	d
+DHO_BOOT_SIZE	dhcp_packet.h	42;"	d
+DHO_BROADCAST_ADDRESS	dhcp_packet.h	57;"	d
+DHO_CLASSLESS_ROUTE	dhcp_packet.h	118;"	d
+DHO_CLIENT_LAST_TRANSACTION_TIME	dhcp_packet.h	111;"	d
+DHO_COOKIE_SERVERS	dhcp_packet.h	37;"	d
+DHO_DEFAULT_IP_TTL	dhcp_packet.h	52;"	d
+DHO_DEFAULT_TCP_TTL	dhcp_packet.h	66;"	d
+DHO_DHCP_AGENT_OPTIONS	dhcp_packet.h	107;"	d
+DHO_DHCP_CLIENT_IDENTIFIER	dhcp_packet.h	89;"	d
+DHO_DHCP_LEASE_TIME	dhcp_packet.h	79;"	d
+DHO_DHCP_MAX_MESSAGE_SIZE	dhcp_packet.h	85;"	d
+DHO_DHCP_MESSAGE	dhcp_packet.h	84;"	d
+DHO_DHCP_MESSAGE_TYPE	dhcp_packet.h	81;"	d
+DHO_DHCP_OPTION_OVERLOAD	dhcp_packet.h	80;"	d
+DHO_DHCP_PARAMETER_REQUEST_LIST	dhcp_packet.h	83;"	d
+DHO_DHCP_REBINDING_TIME	dhcp_packet.h	87;"	d
+DHO_DHCP_RENEWAL_TIME	dhcp_packet.h	86;"	d
+DHO_DHCP_REQUESTED_ADDRESS	dhcp_packet.h	78;"	d
+DHO_DHCP_SERVER_IDENTIFIER	dhcp_packet.h	82;"	d
+DHO_DOMAIN_NAME	dhcp_packet.h	44;"	d
+DHO_DOMAIN_NAME_SERVERS	dhcp_packet.h	35;"	d
+DHO_DOMAIN_SEARCH	dhcp_packet.h	117;"	d
+DHO_END	dhcp_packet.h	119;"	d
+DHO_EXTENSIONS_PATH	dhcp_packet.h	47;"	d
+DHO_FINGER_SERVER	dhcp_packet.h	101;"	d
+DHO_FONT_SERVERS	dhcp_packet.h	76;"	d
+DHO_FQDN	dhcp_packet.h	106;"	d
+DHO_HOST_NAME	dhcp_packet.h	41;"	d
+DHO_IEEE802_3_ENCAPSULATION	dhcp_packet.h	65;"	d
+DHO_IMPRESS_SERVER	dhcp_packet.h	39;"	d
+DHO_INTERFACE_MTU	dhcp_packet.h	55;"	d
+DHO_IP_FORWARDING	dhcp_packet.h	48;"	d
+DHO_IRC_SERVER	dhcp_packet.h	102;"	d
+DHO_LOG_SERVER	dhcp_packet.h	36;"	d
+DHO_LPR_SERVERS	dhcp_packet.h	38;"	d
+DHO_MASK_SUPPLIER	dhcp_packet.h	59;"	d
+DHO_MAX_DGRAM_REASSEMBLY	dhcp_packet.h	51;"	d
+DHO_MERIT_DUMP	dhcp_packet.h	43;"	d
+DHO_MOBILE_IP_HOME_AGENT	dhcp_packet.h	96;"	d
+DHO_NAME_SERVERS	dhcp_packet.h	34;"	d
+DHO_NAME_SERVICE_SEARCH	dhcp_packet.h	115;"	d
+DHO_NDS_CONTEXT	dhcp_packet.h	110;"	d
+DHO_NDS_SERVERS	dhcp_packet.h	108;"	d
+DHO_NDS_TREE_NAME	dhcp_packet.h	109;"	d
+DHO_NETBIOS_DD_SERVER	dhcp_packet.h	73;"	d
+DHO_NETBIOS_NAME_SERVERS	dhcp_packet.h	72;"	d
+DHO_NETBIOS_NODE_TYPE	dhcp_packet.h	74;"	d
+DHO_NETBIOS_SCOPE	dhcp_packet.h	75;"	d
+DHO_NISPLUS_DOMAIN	dhcp_packet.h	92;"	d
+DHO_NISPLUS_SERVER	dhcp_packet.h	93;"	d
+DHO_NIS_SERVERS	dhcp_packet.h	69;"	d
+DHO_NNTP_SERVER	dhcp_packet.h	99;"	d
+DHO_NON_LOCAL_SOURCE_ROUTING	dhcp_packet.h	49;"	d
+DHO_NTP_SERVERS	dhcp_packet.h	70;"	d
+DHO_NWIP_DOMAIN_NAME	dhcp_packet.h	90;"	d
+DHO_NWIP_SUBOPTIONS	dhcp_packet.h	91;"	d
+DHO_PAD	dhcp_packet.h	29;"	d
+DHO_PATH_MTU_AGING_TIMEOUT	dhcp_packet.h	53;"	d
+DHO_PATH_MTU_PLATEAU_TABLE	dhcp_packet.h	54;"	d
+DHO_PERFORM_MASK_DISCOVERY	dhcp_packet.h	58;"	d
+DHO_POLICY_FILTER	dhcp_packet.h	50;"	d
+DHO_POP3_SERVER	dhcp_packet.h	98;"	d
+DHO_RESOURCE_LOCATION_SERVERS	dhcp_packet.h	40;"	d
+DHO_ROOT_PATH	dhcp_packet.h	46;"	d
+DHO_ROUTERS	dhcp_packet.h	32;"	d
+DHO_ROUTER_DISCOVERY	dhcp_packet.h	60;"	d
+DHO_ROUTER_SOLICITATION_ADDRESS	dhcp_packet.h	61;"	d
+DHO_SMTP_SERVER	dhcp_packet.h	97;"	d
+DHO_STATIC_ROUTES	dhcp_packet.h	62;"	d
+DHO_STDA_SERVER	dhcp_packet.h	104;"	d
+DHO_STREETTALK_SERVER	dhcp_packet.h	103;"	d
+DHO_SUBNET	dhcp_packet.h	30;"	d
+DHO_SUBNET_SELECTION	dhcp_packet.h	116;"	d
+DHO_SWAP_SERVER	dhcp_packet.h	45;"	d
+DHO_TCP_KEEPALIVE_GARBAGE	dhcp_packet.h	68;"	d
+DHO_TCP_KEEPALIVE_INTERVAL	dhcp_packet.h	67;"	d
+DHO_TFTP_SERVER	dhcp_packet.h	94;"	d
+DHO_TIME_OFFSET	dhcp_packet.h	31;"	d
+DHO_TIME_SERVERS	dhcp_packet.h	33;"	d
+DHO_TRAILER_ENCAPSULATION	dhcp_packet.h	63;"	d
+DHO_USER_AUTHENTICATION_PROTOCOL	dhcp_packet.h	113;"	d
+DHO_USER_CLASS	dhcp_packet.h	105;"	d
+DHO_VENDOR_CLASS_IDENTIFIER	dhcp_packet.h	88;"	d
+DHO_VENDOR_ENCAPSULATED_OPTIONS	dhcp_packet.h	71;"	d
+DHO_WWW_SERVER	dhcp_packet.h	100;"	d
+DHO_X_DISPLAY_MANAGER	dhcp_packet.h	77;"	d
+ERROR	dhcp.c	153;"	d	file:
+ERROR	dhcp_log.h	42;"	d
+ETHERNET_HARDWARE_ADDRESS	dhcp.c	228;"	d	file:
+ETHERNET_HARDWARE_ADDRESS_LENGTH	dhcp.c	229;"	d	file:
+FALSE	dhcp.c	155;"	d	file:
+FATAL	dhcp_log.h	43;"	d
+GOT_BOTH	dhcp.c	123;"	d	file:
+GOT_CTRL	dhcp.c	121;"	d	file:
+GOT_DATA	dhcp.c	122;"	d	file:
+GOT_ERR	dhcp.c	125;"	d	file:
+GOT_INTR	dhcp.c	124;"	d	file:
+HAVE_GETOPT_H	dhcp.c	141;"	d	file:
+HTYPE_ETHER	dhcp_packet.h	8;"	d
+HTYPE_FDDI	dhcp_packet.h	10;"	d
+HTYPE_IEEE1394	dhcp_packet.h	11;"	d
+HTYPE_IEEE802	dhcp_packet.h	9;"	d
+INFO	dhcp_log.h	39;"	d
+INSAP	dhcp.c	104;"	d	file:
+LOG_BUFFER_SIZE	dhcp_log.h	21;"	d
+LOG_DEBUG	dhcp_log.h	5;"	d
+LOG_DEBUG_STRING	dhcp_log.h	11;"	d
+LOG_ERROR	dhcp_log.h	7;"	d
+LOG_ERROR_STRING	dhcp_log.h	13;"	d
+LOG_FATAL	dhcp_log.h	8;"	d
+LOG_FATAL_STRING	dhcp_log.h	14;"	d
+LOG_FILE_NAME_PREFIX	dhcp_log.h	24;"	d
+LOG_INFO	dhcp_log.h	4;"	d
+LOG_INFO_STRING	dhcp_log.h	10;"	d
+LOG_WARN	dhcp_log.h	6;"	d
+LOG_WARN_STRING	dhcp_log.h	12;"	d
+MAX_DHCP_CHADDR_LENGTH	dhcp.c	161;"	d	file:
+MAX_DHCP_FILE_LENGTH	dhcp.c	163;"	d	file:
+MAX_DHCP_OPTIONS_LENGTH	dhcp.c	164;"	d	file:
+MAX_DHCP_SNAME_LENGTH	dhcp.c	162;"	d	file:
+MAX_FILE_PATH	dhcp_log.h	22;"	d
+OK	dhcp.c	152;"	d	file:
+OUTSAP	dhcp.c	105;"	d	file:
+STATE_CRITICAL	dhcp.c	149;"	d	file:
+STATE_OK	dhcp.c	147;"	d	file:
+STATE_UNKNOWN	dhcp.c	150;"	d	file:
+STATE_WARNING	dhcp.c	148;"	d	file:
+TRUE	dhcp.c	156;"	d	file:
+WARN	dhcp_log.h	41;"	d
+_DHCP_PACKET_H_	dhcp_packet.h	2;"	d
+_DHCP_SERVER_H	dhcp_server.h	2;"	d
+_LOG_H_	dhcp_log.h	2;"	d
+add_dhcp_offer	dhcp.c	/^int add_dhcp_offer(struct in_addr source,dhcp_packet *offer_packet){$/;"	f
+add_requested_server	dhcp.c	/^int add_requested_server(struct in_addr server_address){$/;"	f
+address	dhcp_server.h	/^	struct sockaddr_in address;$/;"	m	struct:raw_msg	typeref:struct:raw_msg::sockaddr_in
+bcopy	dhcp.c	113;"	d	file:
+buff	dhcp_server.h	/^	char		buff[DHCP_MAX_MTU];$/;"	m	struct:raw_msg
+call_getopt	dhcp.c	/^int call_getopt(int argc, char **argv){$/;"	f
+chaddr	dhcp.c	/^        unsigned char chaddr [MAX_DHCP_CHADDR_LENGTH];      \/* hardware address of this machine *\/$/;"	m	struct:dhcp_packet_struct	file:
+chaddr	dhcp_packet.h	/^	char	chaddr[16];$/;"	m	struct:dhcp_packet
+check_ctrl	dhcp.c	/^static int check_ctrl(int prim)$/;"	f	file:
+ciaddr	dhcp.c	/^        struct in_addr ciaddr;          \/* IP address of this machine (if we already have one) *\/$/;"	m	struct:dhcp_packet_struct	typeref:struct:dhcp_packet_struct::in_addr	file:
+ciaddr	dhcp_packet.h	/^	char	ciaddr[4];$/;"	m	struct:dhcp_packet
+client_hardware_address	dhcp.c	/^unsigned char client_hardware_address[MAX_DHCP_CHADDR_LENGTH]="95524893075732";$/;"	v
+close_dhcp_socket	dhcp.c	/^int close_dhcp_socket(int sock){$/;"	f
+code	dhcp_packet.h	/^    char                code;$/;"	m	struct:dhcp_option
+copyright	dhcp.c	/^const char *copyright = "2001-2004";$/;"	v
+create_dhcp_socket	dhcp.c	/^int create_dhcp_socket(void){$/;"	f
+ctl	dhcp.c	/^static struct strbuf ctl = {AREA_SZ, 0, (char *)ctl_area};$/;"	v	typeref:struct:strbuf	file:
+ctl_area	dhcp.c	/^static u_long ctl_area[AREA_SZ];$/;"	v	file:
+dat	dhcp.c	/^static struct strbuf dat = {AREA_SZ, 0, (char *)dat_area};$/;"	v	typeref:struct:strbuf	file:
+dat_area	dhcp.c	/^static u_long dat_area[AREA_SZ];$/;"	v	file:
+dhcp_lease_time	dhcp.c	/^u_int32_t dhcp_lease_time=0;$/;"	v
+dhcp_log	dhcp_log.c	/^void dhcp_log(char level, const char *source, const char *func, int line, char *message, ...)$/;"	f
+dhcp_offer	dhcp.c	/^        }dhcp_offer;$/;"	t	typeref:struct:dhcp_offer_struct	file:
+dhcp_offer_list	dhcp.c	/^dhcp_offer *dhcp_offer_list=NULL;$/;"	v
+dhcp_offer_struct	dhcp.c	/^typedef struct dhcp_offer_struct{$/;"	s	file:
+dhcp_option	dhcp_packet.h	/^struct dhcp_option$/;"	s
+dhcp_packet	dhcp.c	/^        }dhcp_packet;$/;"	t	typeref:struct:dhcp_packet_struct	file:
+dhcp_packet	dhcp_packet.h	/^struct dhcp_packet$/;"	s
+dhcp_packet_handler	dhcp_server.h	/^struct dhcp_packet_handler$/;"	s
+dhcp_packet_struct	dhcp.c	/^typedef struct dhcp_packet_struct{$/;"	s	file:
+dhcp_rebinding_time	dhcp.c	/^u_int32_t dhcp_rebinding_time=0;$/;"	v
+dhcp_renewal_time	dhcp.c	/^u_int32_t dhcp_renewal_time=0;$/;"	v
+dhcp_request_packet	dhcp.c	/^dhcp_packet dhcp_request_packet;$/;"	v
+dhcpoffer_timeout	dhcp.c	/^int dhcpoffer_timeout=2;$/;"	v
+dispatch	dhcp_server.c	/^struct dhcp_packet *dispatch(struct dhcp_packet *request)$/;"	f
+dl_bind	dhcp.c	/^static int dl_bind(int fd, int sap, u_char *addr)$/;"	f	file:
+dl_open	dhcp.c	/^static int dl_open(const char *dev, int unit, int *fd)$/;"	f	file:
+dns1	dhcp_server.h	/^	char dns1[4];$/;"	m	struct:network_config
+dns2	dhcp_server.h	/^	char dns2[4];$/;"	m	struct:network_config
+do_decline	dhcp_server.c	/^struct dhcp_packet *do_decline(struct dhcp_packet *request)$/;"	f
+do_decline	dhcp_server.h	/^	struct dhcp_packet *(*do_decline)(struct dhcp_packet *);$/;"	m	struct:dhcp_packet_handler	typeref:struct:dhcp_packet_handler::do_decline
+do_discover	dhcp_server.c	/^struct dhcp_packet *do_discover(struct dhcp_packet *request)$/;"	f
+do_discover	dhcp_server.h	/^	struct dhcp_packet *(*do_discover)(struct dhcp_packet *);$/;"	m	struct:dhcp_packet_handler	typeref:struct:dhcp_packet_handler::do_discover
+do_inform	dhcp_server.c	/^struct dhcp_packet *do_inform(struct dhcp_packet *request)$/;"	f
+do_inform	dhcp_server.h	/^	struct dhcp_packet *(*do_inform)(struct dhcp_packet *);$/;"	m	struct:dhcp_packet_handler	typeref:struct:dhcp_packet_handler::do_inform
+do_release	dhcp_server.c	/^struct dhcp_packet *do_release(struct dhcp_packet *request)$/;"	f
+do_release	dhcp_server.h	/^	struct dhcp_packet *(*do_release)(struct dhcp_packet *);$/;"	m	struct:dhcp_packet_handler	typeref:struct:dhcp_packet_handler::do_release
+do_request	dhcp_server.c	/^struct dhcp_packet *do_request(struct dhcp_packet *request)$/;"	f
+do_request	dhcp_server.h	/^	struct dhcp_packet *(*do_request)(struct dhcp_packet *);$/;"	m	struct:dhcp_packet_handler	typeref:struct:dhcp_packet_handler::do_request
+email	dhcp.c	/^const char *email = "nagiosplug-devel@lists.sourceforge.net";$/;"	v
+file	dhcp.c	/^        char file [MAX_DHCP_FILE_LENGTH];      \/* boot file name (used for diskless booting?) *\/$/;"	m	struct:dhcp_packet_struct	file:
+file	dhcp_packet.h	/^	char	file[128];$/;"	m	struct:dhcp_packet
+flags	dhcp.c	/^        u_int16_t flags;                \/* flags *\/$/;"	m	struct:dhcp_packet_struct	file:
+flags	dhcp_packet.h	/^	char	flags[2];$/;"	m	struct:dhcp_packet
+free_dhcp_offer_list	dhcp.c	/^int free_dhcp_offer_list(void){$/;"	f
+free_packet	dhcp_packet.c	/^void free_packet(struct dhcp_packet *packet)$/;"	f
+free_requested_server_list	dhcp.c	/^int free_requested_server_list(void){$/;"	f
+get_dhcp_ack	dhcp.c	/^int get_dhcp_ack(int sock)$/;"	f
+get_dhcp_offer	dhcp.c	/^int get_dhcp_offer(int sock){$/;"	f
+get_hardware_address	dhcp.c	/^int get_hardware_address(int sock,char *interface_name){$/;"	f
+get_msg	dhcp.c	/^static int get_msg(int fd)$/;"	f	file:
+get_results	dhcp.c	/^int get_results(void){$/;"	f
+giaddr	dhcp.c	/^        struct in_addr giaddr;          \/* IP address of DHCP relay *\/$/;"	m	struct:dhcp_packet_struct	typeref:struct:dhcp_packet_struct::in_addr	file:
+giaddr	dhcp_packet.h	/^	char	giaddr[4];$/;"	m	struct:dhcp_packet
+gobal_config	dhcp_server.c	/^struct server_config gobal_config = {0};$/;"	v	typeref:struct:server_config
+gobal_file_config	dhcp_log.c	/^struct log_config gobal_file_config = $/;"	v	typeref:struct:log_config
+gobal_packet_handler	dhcp_server.c	/^struct dhcp_packet_handler gobal_packet_handler = $/;"	v	typeref:struct:dhcp_packet_handler
+handle_msg	dhcp_server.c	/^void *handle_msg(void *arg)$/;"	f
+hardware_address	dhcp_server.h	/^	char hardware_address[16];$/;"	m	struct:network_config
+hlen	dhcp.c	/^        u_int8_t  hlen;                 \/* length of hardware address (of this machine) *\/$/;"	m	struct:dhcp_packet_struct	file:
+hlen	dhcp_packet.h	/^	char	hlen;$/;"	m	struct:dhcp_packet
+hops	dhcp.c	/^        u_int8_t  hops;                 \/* hops *\/$/;"	m	struct:dhcp_packet_struct	file:
+hops	dhcp_packet.h	/^	char	hops;$/;"	m	struct:dhcp_packet
+htype	dhcp.c	/^        u_int8_t  htype;                \/* type of hardware address for this machine (Ethernet, etc) *\/$/;"	m	struct:dhcp_packet_struct	file:
+htype	dhcp_packet.h	/^	char 	htype;$/;"	m	struct:dhcp_packet
+ip_address	dhcp_server.h	/^	char ip_address[4];$/;"	m	struct:network_config
+ip_allocator	dhcp_server.h	/^typedef int (*ip_allocator)(struct network_config *);$/;"	t
+ip_allocator_file	dhcp_server.h	/^	char		ip_allocator_file[256];$/;"	m	struct:server_config
+ip_allocator_handler	ip_allocator.c	/^ip_allocator ip_allocator_handler = &sqlite_ip_allocator;$/;"	v
+ip_asc2bytes	dhcp_server.c	/^int ip_asc2bytes(char bytes[], char* ip_address)$/;"	f
+lease	dhcp_server.h	/^	uint32_t	lease;$/;"	m	struct:server_config
+lease_time	dhcp.c	/^	u_int32_t lease_time;            \/* lease time in seconds *\/$/;"	m	struct:dhcp_offer_struct	file:
+length	dhcp_packet.h	/^    char                length;$/;"	m	struct:dhcp_option
+length	dhcp_server.h	/^	uint32_t	length;$/;"	m	struct:raw_msg
+log_config	dhcp_log.h	/^struct log_config$/;"	s
+log_enabled	dhcp_log.h	/^	char log_enabled;$/;"	m	struct:log_config
+log_file_dir	dhcp_log.h	/^	char log_file_dir[MAX_FILE_PATH];$/;"	m	struct:log_config
+log_init	dhcp_log.c	/^int log_init(char *config_file)$/;"	f
+log_level	dhcp_log.h	/^	char log_level;$/;"	m	struct:log_config
+log_level_string	dhcp_log.c	/^char * log_level_string(char log_level)$/;"	f
+mac_addr_dlpi	dhcp.c	/^long mac_addr_dlpi( const char *dev, int unit, u_char  *addr) {$/;"	f
+main	dhcp.c	/^int main(int argc, char **argv){$/;"	f
+main	dhcp_server.c	/^int main()$/;"	f
+marshall	dhcp_packet.c	/^struct dhcp_packet *marshall(char buffer[], int offset, int length)$/;"	f
+my_client_mac	dhcp.c	/^unsigned int my_client_mac[MAX_DHCP_CHADDR_LENGTH] = {9,5,5,2,4,8,9,3,0,7,5,7,3,2};$/;"	v
+mymac	dhcp.c	/^int mymac = 0;$/;"	v
+netmask	dhcp_server.h	/^	char netmask[4];$/;"	m	struct:network_config
+network_config	dhcp_server.h	/^struct network_config$/;"	s
+network_interface_name	dhcp.c	/^char network_interface_name[8]="eth0";$/;"	v
+next	dhcp.c	/^	struct dhcp_offer_struct *next;$/;"	m	struct:dhcp_offer_struct	typeref:struct:dhcp_offer_struct::dhcp_offer_struct	file:
+next	dhcp.c	/^	struct requested_server_struct *next;$/;"	m	struct:requested_server_struct	typeref:struct:requested_server_struct::requested_server_struct	file:
+next	dhcp_packet.h	/^    struct dhcp_option   *next;$/;"	m	struct:dhcp_option	typeref:struct:dhcp_option::dhcp_option
+offered_address	dhcp.c	/^	struct in_addr offered_address;  \/* the IP address that was offered to us *\/$/;"	m	struct:dhcp_offer_struct	typeref:struct:dhcp_offer_struct::in_addr	file:
+op	dhcp.c	/^        u_int8_t  op;                   \/* packet type *\/$/;"	m	struct:dhcp_packet_struct	file:
+op	dhcp_packet.h	/^	char	op;$/;"	m	struct:dhcp_packet
+options	dhcp.c	/^	char options[MAX_DHCP_OPTIONS_LENGTH];  \/* options *\/$/;"	m	struct:dhcp_packet_struct	file:
+options	dhcp_packet.h	/^	struct dhcp_option	*options;$/;"	m	struct:dhcp_packet	typeref:struct:dhcp_packet::dhcp_option
+packet_xid	dhcp.c	/^u_int32_t packet_xid=0;$/;"	v
+padding	dhcp_packet.h	/^	char	*padding;$/;"	m	struct:dhcp_packet
+port	dhcp_server.h	/^	uint16_t	port;$/;"	m	struct:server_config
+print_help	dhcp.c	/^void print_help(void){$/;"	f
+print_revision	dhcp.c	/^void print_revision(const char *progname,const char *revision)$/;"	f
+print_usage	dhcp.c	/^void print_usage(void)$/;"	f
+process_arguments	dhcp.c	/^int process_arguments(int argc, char **argv){$/;"	f
+progname	dhcp.c	/^const char *progname = "check_dhcp";$/;"	v
+put_both	dhcp.c	/^static int put_both(int fd, int clen, int dlen, int pri)$/;"	f	file:
+put_ctrl	dhcp.c	/^static int put_ctrl(int fd, int len, int pri)$/;"	f	file:
+raw_msg	dhcp_server.h	/^struct raw_msg$/;"	s
+rebinding_time	dhcp.c	/^	u_int32_t rebinding_time;        \/* rebinding time in seconds *\/$/;"	m	struct:dhcp_offer_struct	file:
+receive_dhcp_packet	dhcp.c	/^int receive_dhcp_packet(void *buffer, int buffer_size, int sock, int timeout, struct sockaddr_in *address){$/;"	f
+received_requested_address	dhcp.c	/^int received_requested_address=FALSE;$/;"	v
+renew	dhcp_server.h	/^	uint32_t	renew;$/;"	m	struct:server_config
+renewal_time	dhcp.c	/^	u_int32_t renewal_time;          \/* renewal time in seconds *\/$/;"	m	struct:dhcp_offer_struct	file:
+request_specific_address	dhcp.c	/^int request_specific_address=FALSE;$/;"	v
+requested_address	dhcp.c	/^struct in_addr requested_address;$/;"	v	typeref:struct:in_addr
+requested_responses	dhcp.c	/^int requested_responses=0;$/;"	v
+requested_server	dhcp.c	/^        }requested_server;$/;"	t	typeref:struct:requested_server_struct	file:
+requested_server_list	dhcp.c	/^requested_server *requested_server_list=NULL;$/;"	v
+requested_server_struct	dhcp.c	/^typedef struct requested_server_struct{$/;"	s	file:
+requested_servers	dhcp.c	/^int requested_servers=0;   $/;"	v
+revision	dhcp.c	/^const char *revision = "$Revision: 1.7 $";$/;"	v
+router	dhcp_server.h	/^	char router[4];$/;"	m	struct:network_config
+secs	dhcp.c	/^        u_int16_t secs;                 \/* seconds used in timing *\/$/;"	m	struct:dhcp_packet_struct	file:
+secs	dhcp_packet.h	/^	char	secs[2];$/;"	m	struct:dhcp_packet
+send_dhcp_discover	dhcp.c	/^int send_dhcp_discover(int sock){$/;"	f
+send_dhcp_packet	dhcp.c	/^int send_dhcp_packet(void *buffer, int buffer_size, int sock, struct sockaddr_in *dest){$/;"	f
+send_dhcp_request	dhcp.c	/^int send_dhcp_request(int sock){$/;"	f
+serialize	dhcp_packet.c	/^int serialize(struct dhcp_packet *packet, char buffer[], int length)$/;"	f
+server	dhcp_server.h	/^	char 		server[16];$/;"	m	struct:server_config
+server_address	dhcp.c	/^	struct in_addr server_address;   \/* address of DHCP server that sent this offer *\/$/;"	m	struct:dhcp_offer_struct	typeref:struct:dhcp_offer_struct::in_addr	file:
+server_address	dhcp.c	/^	struct in_addr server_address;$/;"	m	struct:requested_server_struct	typeref:struct:requested_server_struct::in_addr	file:
+server_config	dhcp_server.h	/^struct server_config$/;"	s
+siaddr	dhcp.c	/^        struct in_addr siaddr;          \/* IP address of DHCP server *\/$/;"	m	struct:dhcp_packet_struct	typeref:struct:dhcp_packet_struct::in_addr	file:
+siaddr	dhcp_packet.h	/^	char	siaddr[4];$/;"	m	struct:dhcp_packet
+sname	dhcp.c	/^        char sname [MAX_DHCP_SNAME_LENGTH];    \/* name of DHCP server *\/$/;"	m	struct:dhcp_packet_struct	file:
+sname	dhcp_packet.h	/^	char	sname[64];$/;"	m	struct:dhcp_packet
+socket_fd	dhcp_server.h	/^	int socket_fd;$/;"	m	struct:raw_msg
+sqlite_ip_allocator	ip_allocator.c	/^int sqlite_ip_allocator(struct network_config *config)$/;"	f
+start_server	dhcp_server.c	/^int start_server(char *config_file)$/;"	f
+u_int16_t	dhcp.c	128;"	d	file:
+u_int32_t	dhcp.c	129;"	d	file:
+u_int8_t	dhcp.c	127;"	d	file:
+usage	dhcp.c	143;"	d	file:
+valid_responses	dhcp.c	/^int valid_responses=0;     \/* number of valid DHCPOFFERs we received *\/$/;"	v
+validate_arguments	dhcp.c	/^int validate_arguments(void){$/;"	f
+value	dhcp_packet.h	/^    char                *value;$/;"	m	struct:dhcp_option
+verbose	dhcp.c	/^int verbose=0;$/;"	v
+xid	dhcp.c	/^        u_int32_t xid;                  \/* random transaction id number - chosen by this machine *\/$/;"	m	struct:dhcp_packet_struct	file:
+xid	dhcp_packet.h	/^	unsigned int	xid;$/;"	m	struct:dhcp_packet
+yiaddr	dhcp.c	/^        struct in_addr yiaddr;          \/* IP address of this machine (offered by the DHCP server) *\/$/;"	m	struct:dhcp_packet_struct	typeref:struct:dhcp_packet_struct::in_addr	file:
+yiaddr	dhcp_packet.h	/^	char	yiaddr[4];$/;"	m	struct:dhcp_packet

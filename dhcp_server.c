@@ -9,7 +9,7 @@
 
 #include "dhcp_server.h"
 #include "dhcp_log.h"
-/*karan*/
+/*varun*/
 struct server_config gobal_config = {0};
 
 struct dhcp_packet_handler gobal_packet_handler = 
@@ -347,7 +347,7 @@ struct dhcp_packet *do_discover(struct dhcp_packet *request)
 	INFO("==>do_discover");
 	struct network_config config = {0};
 	memcpy(config.hardware_address, request->chaddr, 16);
-	
+   	printf("request->transcation %lu",request->xid);	
 	if(ip_allocator_handler(&config) < 0)
 	{
 		WARN("Cannot assign IP address! do_discover==>");
@@ -366,7 +366,7 @@ struct dhcp_packet *do_discover(struct dhcp_packet *request)
 	response->htype = request->htype;
 	response->hlen = request->hlen;
 	response->hops = 1;
-	memcpy(response->xid, request->xid, 4);
+	memcpy(&response->xid, &request->xid, 5);
 	memcpy(response->yiaddr, config.ip_address, 4);
 	memcpy(response->flags, request->flags, 2);
 	memcpy(response->chaddr, request->chaddr, 16);
@@ -566,6 +566,8 @@ struct dhcp_packet *do_request(struct dhcp_packet *request)
 		type = DHCP_NAK;
 	}
 	
+	/*printf*/
+	printf("request->xid %lu ,%u",request->xid,request->xid);
 	struct dhcp_packet *response = (struct dhcp_packet*)malloc(sizeof(struct dhcp_packet));
 	memset(response, 0, sizeof(struct dhcp_packet));
 
@@ -573,7 +575,7 @@ struct dhcp_packet *do_request(struct dhcp_packet *request)
 	response->htype = request->htype;
 	response->hlen = request->hlen;
 	response->hops = 1;
-	memcpy(response->xid, request->xid, 4);
+	memcpy(&response->xid, &request->xid, 4);
 	memcpy(response->yiaddr, requested_address, 4);
 	memcpy(response->flags, request->flags, 2);
 	memcpy(response->chaddr, request->chaddr, 16);

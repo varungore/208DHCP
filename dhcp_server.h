@@ -6,7 +6,7 @@
 
 #include "dhcp_packet.h"
 
-#define BOOTP_REPLAY_PORT	68
+#define BOOTP_REPLAY_PORT	6824
 
 #define BROADCAST_ADDRESS	"255.255.255.255"
 

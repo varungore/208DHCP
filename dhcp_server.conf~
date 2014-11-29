@@ -1,0 +1,5 @@
+server=10.0.0.14
+listen_port=6724
+lease_time=86400
+renew_time=68400
+ip_allocator_file=network_config

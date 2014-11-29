@@ -137,7 +137,7 @@ struct dhcp_packet
 	char 	htype;
 	char	hlen;
 	char	hops;
-	char	xid[4];
+	unsigned int	xid;
 	char	secs[2];
 	char	flags[2];
 	char	ciaddr[4];
