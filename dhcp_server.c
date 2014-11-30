@@ -1,15 +1,17 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<errno.h>
-#include<sys/types.h>
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <pthread.h>
 
 #include "dhcp_server.h"
 #include "dhcp_log.h"
-/*varun*/
+/*karan*/
 struct server_config gobal_config = {0};
 
 struct dhcp_packet_handler gobal_packet_handler = 
@@ -221,19 +223,19 @@ void *handle_msg(void *arg)
     			goto ERROR;		
     		}
 
-    		setsockopt(broadcast_socket, SOL_SOCKET, SO_BROADCAST, &so_broadcast, sizeof(so_broadcast));
+			setsockopt(broadcast_socket, SOL_SOCKET, SO_BROADCAST, &so_broadcast, sizeof(so_broadcast));
 			setsockopt(broadcast_socket, SOL_SOCKET, SO_REUSEADDR, &so_reuseaddr, sizeof(so_reuseaddr));	
-		
-    		memset(&server_address, 0, sizeof(server_address));
-    		server_address.sin_family = AF_INET;
-    		server_address.sin_port = htons(gobal_config.port);
-    		server_address.sin_addr.s_addr = inet_addr(gobal_config.server);
 
-    		if(bind(broadcast_socket, (struct sockaddr*)&server_address, sizeof(server_address)) < 0)
-    		{
-        		FATAL("***Cannot bind the socket with the address! %s(%d)***", strerror(errno), errno);
-        		goto ERROR;
-    		}
+			memset(&server_address, 0, sizeof(server_address));
+			server_address.sin_family = AF_INET;
+			server_address.sin_port = htons(gobal_config.port);
+			server_address.sin_addr.s_addr = inet_addr(gobal_config.server);
+
+			if(bind(broadcast_socket, (struct sockaddr*)&server_address, sizeof(server_address)) < 0)
+			{
+				FATAL("***Cannot bind the socket with the address! %s(%d)***", strerror(errno), errno);
+				goto ERROR;
+			}
 
 			char buffer[DHCP_MAX_MTU];
 			int length = serialize(response, buffer, DHCP_MAX_MTU);
@@ -344,15 +346,47 @@ extern ip_allocator ip_allocator_handler;
 
 struct dhcp_packet *do_discover(struct dhcp_packet *request)
 {
-	INFO("==>do_discover");
+	int csd, val;
+	socklen_t recvVal;
+	int msgtype;
+	unsigned char dis = {0};
+//	struct reqbuf req = {1};
+//	struct decbuf dec = {2};
+	//struct discresponse disRes = {0};
+	struct sockaddr_in srvadr;
+	char buffer[255];
 	struct network_config config = {0};
+
+	printf("==>do_discover\n");
+
 	memcpy(config.hardware_address, request->chaddr, 16);
-   	printf("request->transcation %lu",request->xid);	
-	if(ip_allocator_handler(&config) < 0)
+	csd = socket(AF_INET, SOCK_DGRAM, 0);
+
+	memset(&srvadr, 0, sizeof srvadr);
+	srvadr.sin_family = AF_INET;
+	srvadr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	srvadr.sin_port = htons(6050);
+
+
+	val = sendto(csd, (void *)&dis, sizeof dis, 0, (struct sockaddr*)&srvadr, sizeof srvadr);
+	if(val < 0)
 	{
-		WARN("Cannot assign IP address! do_discover==>");
-		return NULL;
+		printf("Error Sending\n");
+		return 0;
 	}
+	recvVal = recvfrom(csd, buffer,sizeof buffer,0,(struct sockaddr*)&srvadr, sizeof srvadr);
+	//memcpy(disRes.ip, buffer, sizeof buffer);
+	printf("\ndisRes.ip %s\n",buffer);
+	ip_asc2bytes(config.ip_address, buffer);
+
+//
+//	if(ip_allocator_handler(&config) < 0)
+//	{
+//		WARN("Cannot assign IP address! do_discover==>");
+//		return NULL;
+//	}
+	/*Plugin the layer ssp*/
+	
 
 	struct dhcp_packet *response = (struct dhcp_packet*)malloc(sizeof(struct dhcp_packet));
 	if(NULL == response)
@@ -370,7 +404,7 @@ struct dhcp_packet *do_discover(struct dhcp_packet *request)
 	memcpy(response->yiaddr, config.ip_address, 4);
 	memcpy(response->flags, request->flags, 2);
 	memcpy(response->chaddr, request->chaddr, 16);
-	
+
 	//options
 	//message type
 	struct dhcp_option *packet_type = (struct dhcp_option*)malloc(sizeof(struct dhcp_option));
@@ -526,15 +560,44 @@ struct dhcp_packet *do_discover(struct dhcp_packet *request)
 
 struct dhcp_packet *do_request(struct dhcp_packet *request)
 {
-	INFO("==>do_request");
+	int csd, val;
+	socklen_t recvVal;
+	int msgtype;
+	unsigned char dis = {1};
+//	struct reqbuf req = {1};
+//	struct decbuf dec = {2};
+	//struct discresponse disRes = {0};
+	struct sockaddr_in srvadr;
+	char buffer[255];
 	struct network_config config = {0};
+
+	printf("==>do_request");
+	memcpy(config.hardware_address, request->chaddr, 16);
+	csd = socket(AF_INET, SOCK_DGRAM, 0);
+
+	memset(&srvadr, 0, sizeof srvadr);
+	srvadr.sin_family = AF_INET;
+	srvadr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	srvadr.sin_port = htons(6050);
+
+	val = sendto(csd, (void *)&dis, sizeof dis, 0, (struct sockaddr*)&srvadr, sizeof srvadr);
+	if(val < 0)
+	{
+		printf("Error Sending\n");
+		return 0;
+	}
+	recvVal = recvfrom(csd, buffer,sizeof buffer,0,(struct sockaddr*)&srvadr, sizeof srvadr);
+	//memcpy(disRes.ip, buffer, sizeof buffer);
+	printf("\ndisRes.ip %s\n",buffer);
+	ip_asc2bytes(config.ip_address, buffer);
+
 	memcpy(config.hardware_address, request->chaddr, 16);
 	
-	if(ip_allocator_handler(&config) < 0)
+	/*if(ip_allocator_handler(&config) < 0)
 	{
 		WARN("Cannot assign IP address! do_request==>");
 		return NULL;
-	}
+	}*/
 	
 	char type = DHCP_ACK;
 	char requested_address[4] = {0};

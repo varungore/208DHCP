@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include<string.h>
 #include<sqlite3.h>
 
@@ -10,7 +9,7 @@ extern struct server_config gobal_config;
 
 int sqlite_ip_allocator(struct network_config *config)
 {
-	printf("==>sqlite_ip_allocate");
+	INFO("==>sqlite_ip_allocate");
 	sqlite3 *db = NULL;
 
 	int ret = sqlite3_open(gobal_config.ip_allocator_file, &db);

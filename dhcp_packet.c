@@ -48,9 +48,7 @@ struct dhcp_packet *marshall(char buffer[], int offset, int length)
 	memcpy(&(packet->htype), packet_begin + 1, 1);
 	memcpy(&(packet->hlen), packet_begin + 2, 1);
 	memcpy(&(packet->hops), packet_begin + offset + 3, 1);
-	//printf("sizeof packet->xid %d",sizeof(packet->xid));
-	printf("packet->xid %lu",packet_begin);
-	memcpy(&(packet->xid), packet_begin + 4, 4);
+	memcpy(&packet->xid, packet_begin + 4, 4);
 	memcpy(packet->secs, packet_begin + 8, 2);
 	memcpy(packet->flags, packet_begin + 10, 2);
 	memcpy(packet->ciaddr, packet_begin + 12, 4);

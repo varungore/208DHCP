@@ -1,5 +1,5 @@
 server=192.168.43.63
-listen_port=6724
+listen_port=67
 lease_time=86400
 renew_time=68400
 ip_allocator_file=network_config

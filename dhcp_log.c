@@ -71,12 +71,12 @@ int log_init(char *config_file)
 
 void dhcp_log(char level, const char *source, const char *func, int line, char *message, ...)
 {	
-	printf("\nlogging\n");
-	printf("%s\n", message);
-	printf("%s",gobal_file_config.log_file_dir);
+	//printf("\nlogging\n");
+	//printf("%s\n", message);
+	//printf("%s",gobal_file_config.log_file_dir);
 	if(0 == gobal_file_config.log_enabled || level < gobal_file_config.log_level)
 	{
-		printf("\nretun init log\n");
+		//printf("\nretun init log\n");
 		return;
 	}
 
