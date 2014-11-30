@@ -11,7 +11,7 @@ char DHCP_MAGIC_COOKIE[4] = {0x63, 0x82, 0x53, 0x63};
 //Caller need to free the memory used for the DHCP packet 
 struct dhcp_packet *marshall(char buffer[], int offset, int length)
 {
-	INFO("==>marshall, offset=%d, length=%d", offset, length);
+	printf("==>marshall, offset=%d, length=%d\n", offset, length);
 	
 	struct dhcp_packet *packet = NULL;
 	//first check if the arguments is valid
@@ -48,7 +48,9 @@ struct dhcp_packet *marshall(char buffer[], int offset, int length)
 	memcpy(&(packet->htype), packet_begin + 1, 1);
 	memcpy(&(packet->hlen), packet_begin + 2, 1);
 	memcpy(&(packet->hops), packet_begin + offset + 3, 1);
-	memcpy(packet->xid, packet_begin + 4, 4);
+	//printf("sizeof packet->xid %d",sizeof(packet->xid));
+	printf("packet->xid %lu",packet_begin);
+	memcpy(&(packet->xid), packet_begin + 4, 4);
 	memcpy(packet->secs, packet_begin + 8, 2);
 	memcpy(packet->flags, packet_begin + 10, 2);
 	memcpy(packet->ciaddr, packet_begin + 12, 4);
@@ -59,24 +61,24 @@ struct dhcp_packet *marshall(char buffer[], int offset, int length)
 	memcpy(packet->sname, packet_begin + 44, 64);
 	memcpy(packet->file, packet_begin + 108, 128);
 	
-	DEBUG("--------------DUMP DHCP PACKET-------------");
-	DEBUG("packet->op=%d", packet->op);
-	DEBUG("packet->htype=%d", packet->htype);
-	DEBUG("packet->hlen=%d", packet->hlen);
-	DEBUG("packet->hops=%d", packet->hops);
-	DEBUG("packet->xid=%x,%x,%x,%x", packet->xid[0], packet->xid[1], packet->xid[2], packet->xid[3]);
-	DEBUG("packet->secs=%x,%x", packet->secs[0], packet->secs[1]);
-	DEBUG("packet->flags=%x,%x", packet->flags[0], packet->flags[1]);
-	DEBUG("packet->ciaddr=%x,%x,%x,%x", packet->ciaddr[0], packet->ciaddr[1], packet->ciaddr[2], packet->ciaddr[3]);
-	DEBUG("packet->yiaddr=%x,%x,%x,%x", packet->yiaddr[0], packet->yiaddr[1], packet->yiaddr[2], packet->yiaddr[3]);
-	DEBUG("packet->siaddr=%x,%x,%x,%x", packet->siaddr[0], packet->siaddr[1], packet->siaddr[2], packet->siaddr[3]);
-	DEBUG("packet->giaddr=%x,%x,%x,%x", packet->giaddr[0], packet->giaddr[1], packet->giaddr[2], packet->giaddr[3]);
-	DEBUG("packet->chaddr=%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x", packet->chaddr[0], packet->chaddr[1], packet->chaddr[2], 
+	printf("--------------DUMP DHCP PACKET-------------");
+	printf("packet->op=%d", packet->op);
+	printf("packet->htype=%d", packet->htype);
+	printf("packet->hlen=%d", packet->hlen);
+	printf("packet->hops=%d", packet->hops);
+	printf("packet->xid=%lu", packet->xid);
+	printf("packet->secs=%x,%x", packet->secs[0], packet->secs[1]);
+	printf("packet->flags=%x,%x", packet->flags[0], packet->flags[1]);
+	printf("packet->ciaddr=%x,%x,%x,%x", packet->ciaddr[0], packet->ciaddr[1], packet->ciaddr[2], packet->ciaddr[3]);
+	printf("packet->yiaddr=%x,%x,%x,%x", packet->yiaddr[0], packet->yiaddr[1], packet->yiaddr[2], packet->yiaddr[3]);
+	printf("packet->siaddr=%x,%x,%x,%x", packet->siaddr[0], packet->siaddr[1], packet->siaddr[2], packet->siaddr[3]);
+	printf("packet->giaddr=%x,%x,%x,%x", packet->giaddr[0], packet->giaddr[1], packet->giaddr[2], packet->giaddr[3]);
+	printf("packet->chaddr=%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x", packet->chaddr[0], packet->chaddr[1], packet->chaddr[2], 
 	packet->chaddr[3], packet->chaddr[4], packet->chaddr[5], packet->chaddr[6], packet->chaddr[7], packet->chaddr[8], packet->chaddr[9], 
 	packet->chaddr[10], packet->chaddr[11], packet->chaddr[12], packet->chaddr[13], packet->chaddr[14], packet->chaddr[15]);
-	DEBUG("packet->sname=%s", packet->sname);
-	DEBUG("packet->file=%s", packet->file);
-	DEBUG("---------------------------------------------");
+	printf("packet->sname=%s", packet->sname);
+	printf("packet->file=%s", packet->file);
+	printf("---------------------------------------------");
 	
 	//check DHCP magic cookie
 	char magic[4];
@@ -268,30 +270,30 @@ int serialize(struct dhcp_packet *packet, char buffer[], int length)
 		return 0;
 	}
 	
-	DEBUG("--------------DUMP DHCP PACKET-------------");
-	DEBUG("packet->op=%d", packet->op);
-	DEBUG("packet->htype=%d", packet->htype);
-	DEBUG("packet->hlen=%d", packet->hlen);
-	DEBUG("packet->hops=%d", packet->hops);
-	DEBUG("packet->xid=%x,%x,%x,%x", packet->xid[0], packet->xid[1], packet->xid[2], packet->xid[3]);
-	DEBUG("packet->secs=%x,%x", packet->secs[0], packet->secs[1]);
-	DEBUG("packet->flags=%x,%x", packet->flags[0], packet->flags[1]);
-	DEBUG("packet->ciaddr=%x,%x,%x,%x", packet->ciaddr[0], packet->ciaddr[1], packet->ciaddr[2], packet->ciaddr[3]);
-	DEBUG("packet->yiaddr=%x,%x,%x,%x", packet->yiaddr[0], packet->yiaddr[1], packet->yiaddr[2], packet->yiaddr[3]);
-	DEBUG("packet->siaddr=%x,%x,%x,%x", packet->siaddr[0], packet->siaddr[1], packet->siaddr[2], packet->siaddr[3]);
-	DEBUG("packet->giaddr=%x,%x,%x,%x", packet->giaddr[0], packet->giaddr[1], packet->giaddr[2], packet->giaddr[3]);
-	DEBUG("packet->chaddr=%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x", packet->chaddr[0], packet->chaddr[1], packet->chaddr[2], 
+	printf("--------------DUMP DHCP PACKET-------------");
+	printf("packet->op=%d", packet->op);
+	printf("packet->htype=%d", packet->htype);
+	printf("packet->hlen=%d", packet->hlen);
+	printf("packet->hops=%d", packet->hops);
+	printf("packet->xid=%lu", packet->xid);
+	printf("packet->secs=%x,%x", packet->secs[0], packet->secs[1]);
+	printf("packet->flags=%x,%x", packet->flags[0], packet->flags[1]);
+	printf("packet->ciaddr=%x,%x,%x,%x", packet->ciaddr[0], packet->ciaddr[1], packet->ciaddr[2], packet->ciaddr[3]);
+	printf("packet->yiaddr=%x,%x,%x,%x", packet->yiaddr[0], packet->yiaddr[1], packet->yiaddr[2], packet->yiaddr[3]);
+	printf("packet->siaddr=%x,%x,%x,%x", packet->siaddr[0], packet->siaddr[1], packet->siaddr[2], packet->siaddr[3]);
+	printf("packet->giaddr=%x,%x,%x,%x", packet->giaddr[0], packet->giaddr[1], packet->giaddr[2], packet->giaddr[3]);
+	printf("packet->chaddr=%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x,%x", packet->chaddr[0], packet->chaddr[1], packet->chaddr[2], 
 	packet->chaddr[3], packet->chaddr[4], packet->chaddr[5], packet->chaddr[6], packet->chaddr[7], packet->chaddr[8], packet->chaddr[9], 
 	packet->chaddr[10], packet->chaddr[11], packet->chaddr[12], packet->chaddr[13], packet->chaddr[14], packet->chaddr[15]);
-	DEBUG("packet->sname=%s", packet->sname);
-	DEBUG("packet->file=%s", packet->file);
-	DEBUG("---------------------------------------------");
+	printf("packet->sname=%s", packet->sname);
+	printf("packet->file=%s", packet->file);
+	printf("---------------------------------------------");
 	
 	memcpy(buffer, &(packet->op), 1);
 	memcpy(buffer + 1, &(packet->htype), 1);
 	memcpy(buffer + 2, &(packet->hlen), 1);
 	memcpy(buffer + 3, &(packet->hops), 1);
-	memcpy(buffer + 4, packet->xid, 4);
+	memcpy(buffer + 4, &packet->xid, 4);
 	memcpy(buffer + 8, packet->secs, 2);
 	memcpy(buffer + 10, packet->flags, 2);
 	memcpy(buffer + 12, packet->ciaddr, 4);

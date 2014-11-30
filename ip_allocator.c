@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include<sqlite3.h>
 
@@ -9,7 +10,7 @@ extern struct server_config gobal_config;
 
 int sqlite_ip_allocator(struct network_config *config)
 {
-	INFO("==>sqlite_ip_allocate");
+	printf("==>sqlite_ip_allocate");
 	sqlite3 *db = NULL;
 
 	int ret = sqlite3_open(gobal_config.ip_allocator_file, &db);
@@ -49,7 +50,8 @@ int sqlite_ip_allocator(struct network_config *config)
 	char asc_dns2[16] = {0};
 	char asc_ip_address[16] = {0};
 
-	const char *value = sqlite3_column_text(statement, 0);
+	const char *value = 
+sqlite3_column_text(statement, 0);
 	strncpy(asc_gateway, value, 16);
 	value = sqlite3_column_text(statement, 1);
     strncpy(asc_netmask, value, 16);
@@ -60,7 +62,7 @@ int sqlite_ip_allocator(struct network_config *config)
 
 	sqlite3_finalize(statement);
 
-	DEBUG("gateway=%s, netmask=%s, dns1=%s, dns2=%s", asc_gateway, asc_netmask, asc_dns1, asc_dns2);
+	printf("gateway=%s, netmask=%s, dns1=%s, dns2=%s", asc_gateway, asc_netmask, asc_dns1, asc_dns2);
 	
 	//convert mac address to 64-bit int.
 	//the first 6 bytes of network_config.hardware_address
@@ -70,14 +72,17 @@ int sqlite_ip_allocator(struct network_config *config)
 	for(i = 0; i < 6; i++)
 	{
 		mac *= 0x100;
-		DEBUG("mac=%lx", mac);
+		printf("mac=%lx", mac);
 		mac += (uint8_t)config->hardware_address[i];
-		DEBUG("mac=%lx", mac);
+		printf("mac=%lx", mac);
 	}
 
-	DEBUG("mac address=%02x:%02x:%02x:%02x:%02x:%02x, integer value=%ld", (uint8_t)config->hardware_address[0], (uint8_t)config->hardware_address[1], (uint8_t)config->hardware_address[2], (uint8_t)config->hardware_address[3], (uint8_t)config->hardware_address[4], (uint8_t)config->hardware_address[5], mac);
+	printf("mac address=%02x:%02x:%02x:%02x:%02x:%02x, integer value=%ld", (uint8_t)config->hardware_address[0], (uint8_t)config->hardware_address[1], (uint8_t)config->hardware_address[2], (uint8_t)config->hardware_address[3], (uint8_t)config->hardware_address[4], (uint8_t)config->hardware_address[5], mac);
 	char sql[128] = {0};
-	snprintf(sql, 128, "select * from mac_ip where mac = %ld", mac);
+	//snprintf(sql, 128, "select * from mac_ip where mac = %s", buffer);
+	snprintf(sql, 128, "select * from mac_ip where mac = 264216233586374");
+	printf("%s\n %lu\n %lx",sql,mac,mac);
+	//snprintf(sql, 128, "select * from mac_ip");
 	ret = sqlite3_prepare(db, sql, 128, &statement, NULL);
 
     if(SQLITE_OK != ret)
@@ -97,7 +102,7 @@ int sqlite_ip_allocator(struct network_config *config)
 	value = sqlite3_column_text(statement, 1);
     strncpy(asc_ip_address, value, 16);
 
-	DEBUG("Allocate IP address: %s", asc_ip_address);
+	printf("Allocate IP address: %s", asc_ip_address);
 	sqlite3_finalize(statement);
 
     sqlite3_close(db);
@@ -108,7 +113,7 @@ int sqlite_ip_allocator(struct network_config *config)
 	ip_asc2bytes(config->dns2, asc_dns2);
 	ip_asc2bytes(config->ip_address, asc_ip_address); 
 
-	INFO("sqlite_ip_allocator==>");
+	printf("sqlite_ip_allocator==>");
 	return 0;
 ERROR:
 	WARN("***ERROR sqlite_ip_allocator==>***");
