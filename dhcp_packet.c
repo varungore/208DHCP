@@ -212,7 +212,7 @@ void free_packet(struct dhcp_packet *packet)
 	}
 
 	struct dhcp_option *option = packet->options;
-	while(NULL == option)
+	while(NULL != option)
 	{
 		if(NULL != option->value)
 		{
